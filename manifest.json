@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Autofill",
+    "version": "1.0",
+    "description": "A web extension/Plug-in which allows users to autofill the common app with the click of a button. The manifest will include the files and images that will be used to create th eplugin itself.",
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png" 
+    },
+    "permissions": ["webNavigation", "scripting", "activeTab", "tabs"],
+    "host_permissions": ["https://apply.commonapp.org/common/3/11"],
+    "action": {"default_popup": "public/test.html"},
+    "background": {"service_worker": "public/scripts/background.js"},
+    "content_scripts":[
+        {
+            "matches": ["https://apply.commonapp.org/common/3/11"],
+            "js": ["public/scripts/content.js"]
+        }
+    ]
+}

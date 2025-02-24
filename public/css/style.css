@@ -1,0 +1,9 @@
+html{
+    width: 400px;
+    height: 800px;
+}
+
+#autofill{
+    display: block;
+    margin: 0 auto;
+}
